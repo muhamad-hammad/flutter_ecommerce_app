@@ -1,7 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-
+import 'package:flutter_ecommerce_app/pages/home_page.dart';
 
 class Intropage extends StatelessWidget {
   const Intropage({super.key});
@@ -50,7 +48,7 @@ class Intropage extends StatelessWidget {
               //button
               const SizedBox(height: 10),
               GestureDetector(
-                // onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Homepage())),
+                 onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage())),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.grey[900],
