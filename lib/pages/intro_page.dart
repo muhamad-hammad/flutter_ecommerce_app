@@ -26,7 +26,7 @@ class Intropage extends StatelessWidget {
               const SizedBox(height: 29),
           
               //title
-              const Text('Mountain Dew',
+              const Text('NIKE',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -38,7 +38,7 @@ class Intropage extends StatelessWidget {
               const SizedBox(height: 10),
           
               //title
-              const Text('Dar k agai jeet ha ',
+              const Text('Find your favourite NIKE AIR JORDANS',
                   style: TextStyle(
                     fontSize: 14,
                     fontStyle: FontStyle.italic,
