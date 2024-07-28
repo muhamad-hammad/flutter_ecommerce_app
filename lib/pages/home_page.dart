@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/pages/cart_page.dart';
+import 'package:flutter_ecommerce_app/pages/shop_page.dart';
 
 import '../Components/bottom_nav_bar.dart';
 
@@ -27,14 +29,14 @@ class _HomePageState extends State<HomePage> {
     const ShopPage(),
 
     //cart page
-    const CartPage().
-
-  ]
+    const CartPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[400],
+      body: _pages[_selectedIndex],
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
