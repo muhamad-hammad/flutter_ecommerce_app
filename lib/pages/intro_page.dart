@@ -57,7 +57,7 @@ class Intropage extends StatelessWidget {
                   padding: const EdgeInsets.all(25),
                   child: const Center(
                     child: Text(
-                      'kharid lai',
+                      'SHOP NOW',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,

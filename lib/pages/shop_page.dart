@@ -1,8 +1,5 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_ecommerce_app/models/shoe.dart';
 
 import '../Components/shoe_tile.dart';
@@ -80,6 +77,8 @@ class _ShopPageState extends State<ShopPage> {
 
         Expanded(
           child: ListView.builder(
+            itemCount: 4 ,
+            scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               //create a shoe
               Shoe shoe = Shoe(
@@ -94,6 +93,13 @@ class _ShopPageState extends State<ShopPage> {
             },
           ),
         ),
+
+        const Padding(
+          padding: EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
+          child: Divider(
+            color: Colors.white,
+          ),
+        )
       ],
     );
   }
