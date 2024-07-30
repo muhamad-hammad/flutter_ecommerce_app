@@ -42,9 +42,11 @@ class _ShopPageState extends State<ShopPage> {
         //message
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(
-            'Everyone flies.. some fly higher than others',
-            style: TextStyle(color: Colors.grey[600]),
+          child: Center(
+            child: Text(
+              'Everyone flies.. some fly higher than others',
+              style: TextStyle(color: Colors.grey[600]),
+            ),
           ),
         ),
 
