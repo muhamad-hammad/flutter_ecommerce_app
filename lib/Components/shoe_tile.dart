@@ -1,12 +1,15 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import '../models/shoe.dart';
 
 class ShoeTile extends StatelessWidget {
   final Shoe shoe;
+  final void Function()? onTap;
 
-  const ShoeTile({super.key, required this.shoe});
+  const ShoeTile({
+    super.key,
+    required this.shoe,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class ShoeTile extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -41,7 +44,7 @@ class ShoeTile extends StatelessWidget {
           const SizedBox(height: 10),
           // Description
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
               shoe.description,
               textAlign: TextAlign.center,
@@ -64,7 +67,7 @@ class ShoeTile extends StatelessWidget {
                     // Shoe name
                     Text(
                       shoe.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black87,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -83,17 +86,20 @@ class ShoeTile extends StatelessWidget {
                   ],
                 ),
                 // Button to add to cart
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(12),
+                GestureDetector(
+                  onTap: onTap,
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
                   ),
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
-                ),
+                )
               ],
             ),
           ),
