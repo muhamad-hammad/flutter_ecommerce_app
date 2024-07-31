@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/models/cart.dart';
 import 'package:provider/provider.dart';
 
+import '../Components/cart_item.dart';
 import '../models/shoe.dart';
 
 class CartPage extends StatefulWidget {
@@ -18,6 +19,7 @@ class _CartPageState extends State<CartPage> {
       builder: (context, value, child) =>Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //heading
             Text(
@@ -30,17 +32,20 @@ class _CartPageState extends State<CartPage> {
 
               const SizedBox(height: 10,),
 
-              Expanded(child: ListView.builder(itemBuilder: (context, index) {
+              Expanded(
+                child: ListView.builder(
+                  itemCount: value.getUserCart().length,
+                  itemBuilder: (context, index) {
                 //get individual shoe
                 Shoe individualShoe = value.getUserCart()[index];
 
 
                 //return the cart item
-                return CartItem();
+                return CartItem(shoe: individualShoe,);
               }))
           ],
           ),
       )
-    )
+    );
   }
 }
